@@ -1,10 +1,10 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Page() {
-    const [loading, setLoading] = React.useState(false);
+    const [loading, setLoading] = useState(false);
     useEffect(() => {
         if (loading) {
             setTimeout(() => {
@@ -14,7 +14,6 @@ export default function Page() {
     }, [loading])
     return (
         <div className="grid grid-cols-5 gap-2">
-
             {
                 loading ? (
                     <Button variant="outline" capitalize={false} disabled>
@@ -24,7 +23,6 @@ export default function Page() {
                 ) :
                     <Button variant="outline" capitalize={false} onClick={() => setLoading(true)} >push</Button>
             }
-
         </div>
 
     );
