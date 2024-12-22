@@ -14,8 +14,10 @@ export default function Page() {
                     selected={date}
                     onSelect={setDate}
                     className="rounded-md border shadow"
+                    disabled={(date) => date.getDay() === 6 || date.getDay() === 0}
                 />
             </div>
+            <h3>Selected date: {date?.toDateString()}</h3>
         </div>
     )
 }
